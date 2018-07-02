@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Example of a call to a native method
+        // 从原生方法中获取文本
         sample_text.text = stringFromJNI()
     }
 
