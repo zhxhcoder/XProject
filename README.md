@@ -6,9 +6,13 @@
 
 ### Java+Kotlin+C++ 混合编程
 
+### RxLifecycle辅助开发
+
 ### Bugly 监控各种项目bug
 
 ### LeakCanary 监控内存使用
+
+### BlockCanary 性能监控使用
 
 ### Glide图片下载工具库
 
@@ -20,4 +24,8 @@
 
 ### Tinker实现热修复热更新
 
+### VasSonic实现简单的Hybrid框架
 
+### GreenDao管理数据库
+
+### AndroidAsync Socket编程
