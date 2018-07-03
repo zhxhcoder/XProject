@@ -1,10 +1,7 @@
 # XProject介绍
 从事android开发多年以来的经验汇总，并提供一个快速开发的模块化组件化架构框架
 
-# 整体架构
-### MVP+Retrofit+RxJava的框架网络请求进行
-
-### Java+Kotlin+C++ 混合编程
+# 所用开源库
 
 ### RxLifecycle辅助开发
 
@@ -42,5 +39,12 @@
 4. flexbox
 5. constraint-layout
 
+# 整体架构
+
+### MVP+Retrofit+RxJava的框架网络请求进行
+
+### Java+Kotlin+C++ 混合编程
+
+baselib 又分为
 
 
