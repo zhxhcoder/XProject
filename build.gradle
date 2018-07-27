@@ -1,9 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: this.file('common.gradle')
 
 buildscript {
     ext.kotlin_version = '1.2.30'
-    repositories {
+    repositories {//配置工程的仓库地址
         google()
+        maven { url "https://jitpack.io" }
+        mavenCentral()
         jcenter()
     }
     dependencies {
@@ -19,7 +22,19 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url 'http://developer.huawei.com/repo/' }
     }
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
 
 task clean(type: Delete) {
