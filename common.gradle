@@ -1,0 +1,30 @@
+ext{
+
+    isRelease = true
+
+    android = [compileSdkVersion: 27,
+               buildToolsVersion: '27.0.3',
+               applicationId    : 'com.zhxh.xproject',
+               minSdkVersion    : 16,
+               targetSdkVersion : 27,
+               versionCode      : 1,
+               versionName      : '1.0',
+               // 是否分包
+               multiDexEnabled  : true,
+               // 是否混淆
+               minifyEnabled    : true]
+
+}
+
+
+def loadProperties() {
+    //读取project.properties 中的文件属性
+    Properties properties = new Properties()
+    InputStream inputStream = project.rootProject.file('project.properties').newDataInputStream();
+    properties.load(inputStream)
+    ext.isRelease = Boolean.valueOf(properties.isRelease)
+    System.err.println "rootProject.ext.isRelease $rootProject.ext.isRelease "
+
+}
+//加载project.properties
+loadProperties()
