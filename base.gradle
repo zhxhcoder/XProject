@@ -2,6 +2,18 @@ ext{
 
     isRelease = true
 
+    //squareup.libraries
+    retrofit2Version = '2.1.0'
+    okhttp3Version = '3.6.0'
+
+    //io.reactivex.libraries
+    rxnettyTcpVersion = '0.5.2-rc.4'
+    rxjava2Version = '2.1.0'
+    rxandroid2Version = '2.0.1'
+    rxbindingVersion = '1.0.0'
+    rxlifecycleVersion = '1.0'
+
+
     android = [compileSdkVersion: 27,
                buildToolsVersion: '27.0.3',
                applicationId    : 'com.zhxh.xproject',
@@ -14,8 +26,30 @@ ext{
                // 是否混淆
                minifyEnabled    : true]
 
+    squareupDependencies = [
+            retrofit2                  : buildDependency('com.squareup.retrofit2', 'retrofit', retrofit2Version),
+            retrofit2_converter_gson   : buildDependency('com.squareup.retrofit2', 'converter-gson', retrofit2Version),
+            retrofit2_converter_scalars: buildDependency('com.squareup.retrofit2', 'converter-scalars', retrofit2Version),
+            retrofit2_adapter_rxjava   : buildDependency('com.squareup.retrofit2', 'adapter-rxjava', retrofit2Version),
+            okhttp                     : buildDependency('com.squareup.okhttp3', 'okhttp', okhttp3Version),
+            okhttp_logging_interceptor : buildDependency('com.squareup.okhttp3', 'logging-interceptor', okhttp3Version),
+    ]
+
+    rxDependencies = [
+            rxnetty_tcp           : buildDependency('io.reactivex', 'rxnetty-tcp', rxnettyTcpVersion),
+            rxjava2               : buildDependency('io.reactivex.rxjava2', 'rxjava', rxjava2Version),
+            rxandroid2            : buildDependency('io.reactivex.rxjava2', 'rxandroid', rxandroid2Version),
+            rxbinding             : buildDependency('com.jakewharton.rxbinding', 'rxbinding', rxbindingVersion),
+            rxlifecycle           : buildDependency('com.trello', 'rxlifecycle', rxlifecycleVersion),
+            rxlifecycle_android   : buildDependency('com.trello', 'rxlifecycle-android', rxlifecycleVersion),
+            rxlifecycle_components: buildDependency('com.trello', 'rxlifecycle-components', rxlifecycleVersion),
+    ]
+
 }
 
+String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}
 
 def loadProperties() {
     //读取project.properties 中的文件属性

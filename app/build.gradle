@@ -38,6 +38,18 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:support-vector-drawable:27.1.1'
+
+
+    implementation squareupDependencies.retrofit2//Retrofit2所需要的包
+    implementation squareupDependencies.retrofit2_converter_gson//ConverterFactory的Gson依赖包
+    implementation squareupDependencies.retrofit2_converter_scalars//ConverterFactory的String依赖包
+    implementation squareupDependencies.retrofit2_adapter_rxjava
+    implementation (rxDependencies.rxnetty_tcp) { exclude group: 'org.openjdk.jmh' }
+    implementation rxDependencies.rxandroid2
+    implementation rxDependencies.rxjava2
+    implementation rxDependencies.rxbinding
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
