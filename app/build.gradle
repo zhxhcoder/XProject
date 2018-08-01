@@ -10,13 +10,14 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
                 cppFlags "-frtti -fexceptions"
             }
         }
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -39,18 +40,13 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:support-vector-drawable:27.1.1'
 
+    implementation rootProject.ext.squareupDependencies.retrofit2
+    implementation rootProject.ext.squareupDependencies.retrofit2_converter_gson
+    implementation rootProject.ext.squareupDependencies.retrofit2_converter_scalars
+    implementation rootProject.ext.squareupDependencies.retrofit2_adapter_rxjava
+    implementation rootProject.ext.rxDependencies.rxandroid2
+    implementation rootProject.ext.rxDependencies.rxjava2
 
-    implementation squareupDependencies.retrofit2//Retrofit2所需要的包
-    implementation squareupDependencies.retrofit2_converter_gson//ConverterFactory的Gson依赖包
-    implementation squareupDependencies.retrofit2_converter_scalars//ConverterFactory的String依赖包
-    implementation squareupDependencies.retrofit2_adapter_rxjava
-    implementation (rxDependencies.rxnetty_tcp) { exclude group: 'org.openjdk.jmh' }
-    implementation rxDependencies.rxandroid2
-    implementation rxDependencies.rxjava2
-    implementation rxDependencies.rxbinding
+    implementation 'com.android.support:multidex:1.0.3'
 
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

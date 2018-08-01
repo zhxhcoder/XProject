@@ -1,17 +1,6 @@
-ext{
+ext {
 
     isRelease = true
-
-    //squareup.libraries
-    retrofit2Version = '2.1.0'
-    okhttp3Version = '3.6.0'
-
-    //io.reactivex.libraries
-    rxnettyTcpVersion = '0.5.2-rc.4'
-    rxjava2Version = '2.1.0'
-    rxandroid2Version = '2.0.1'
-    rxbindingVersion = '1.0.0'
-    rxlifecycleVersion = '1.0'
 
 
     android = [compileSdkVersion: 27,
@@ -27,28 +16,18 @@ ext{
                minifyEnabled    : true]
 
     squareupDependencies = [
-            retrofit2                  : buildDependency('com.squareup.retrofit2', 'retrofit', retrofit2Version),
-            retrofit2_converter_gson   : buildDependency('com.squareup.retrofit2', 'converter-gson', retrofit2Version),
-            retrofit2_converter_scalars: buildDependency('com.squareup.retrofit2', 'converter-scalars', retrofit2Version),
-            retrofit2_adapter_rxjava   : buildDependency('com.squareup.retrofit2', 'adapter-rxjava', retrofit2Version),
-            okhttp                     : buildDependency('com.squareup.okhttp3', 'okhttp', okhttp3Version),
-            okhttp_logging_interceptor : buildDependency('com.squareup.okhttp3', 'logging-interceptor', okhttp3Version),
+            retrofit2                  : 'com.squareup.retrofit2:retrofit:2.4.0',
+            retrofit2_converter_gson   : 'com.squareup.retrofit2:converter-gson:2.1.0',
+            retrofit2_converter_scalars: 'com.squareup.retrofit2:converter-scalars:2.1.0',
+            retrofit2_adapter_rxjava   : 'com.squareup.retrofit2:adapter-rxjava:2.1.0',
+            okhttp                     : 'com.squareup.okhttp3:okhttp:3.6.0',
+            okhttp_logging_interceptor : 'com.squareup.okhttp3:logging-interceptor:3.6.0',
     ]
 
     rxDependencies = [
-            rxnetty_tcp           : buildDependency('io.reactivex', 'rxnetty-tcp', rxnettyTcpVersion),
-            rxjava2               : buildDependency('io.reactivex.rxjava2', 'rxjava', rxjava2Version),
-            rxandroid2            : buildDependency('io.reactivex.rxjava2', 'rxandroid', rxandroid2Version),
-            rxbinding             : buildDependency('com.jakewharton.rxbinding', 'rxbinding', rxbindingVersion),
-            rxlifecycle           : buildDependency('com.trello', 'rxlifecycle', rxlifecycleVersion),
-            rxlifecycle_android   : buildDependency('com.trello', 'rxlifecycle-android', rxlifecycleVersion),
-            rxlifecycle_components: buildDependency('com.trello', 'rxlifecycle-components', rxlifecycleVersion),
+            rxjava2   : 'io.reactivex.rxjava2:rxjava:2.2.0',
+            rxandroid2: 'io.reactivex.rxjava2:rxandroid:2.0.2',
     ]
-
-}
-
-String buildDependency(String pack, String dependency, String version) {
-    return "${pack}:${dependency}:${version}"
 }
 
 def loadProperties() {
