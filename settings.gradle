@@ -1,1 +1,1 @@
-include ':app', ':xprojectlib', ':baselib', ':live', ':live', ':instantapp'
+include ':app', ':xprojectlib', ':baselib'
