@@ -34,19 +34,21 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:support-vector-drawable:27.1.1'
+    implementation rootProject.ext.dependence.libKotlin
+    implementation rootProject.ext.dependence.libSupportV7
+    implementation rootProject.ext.dependence.libConstraintLayout
+    implementation rootProject.ext.dependence.libSupportDesign
+    implementation rootProject.ext.dependence.libRecyclerView
+    implementation rootProject.ext.dependence.libVectorDrawable
 
-    implementation rootProject.ext.squareupDependencies.retrofit2
-    implementation rootProject.ext.squareupDependencies.retrofit2_converter_gson
-    implementation rootProject.ext.squareupDependencies.retrofit2_converter_scalars
-    implementation rootProject.ext.squareupDependencies.retrofit2_adapter_rxjava
-    implementation rootProject.ext.rxDependencies.rxandroid2
-    implementation rootProject.ext.rxDependencies.rxjava2
 
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation rootProject.ext.dependence.retrofit
+    implementation rootProject.ext.dependence.retrofitConverterGson
+    implementation rootProject.ext.dependence.retrofitConverterScalars
+    implementation rootProject.ext.dependence.retrofitAdapterRxJava2
+    implementation rootProject.ext.dependence.libRxjava2
+    implementation rootProject.ext.dependence.libRxAndroid2
+
+    implementation rootProject.ext.dependence.libMultidex
 
 }
